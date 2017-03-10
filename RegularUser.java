@@ -137,9 +137,16 @@ public class RegularUser extends User {
 		olx.regUser(user);
 		return user;
 	}
+	
+	public void logInOlx () {
+		OLX.getInstance().logInUser(this.mail, this.password);
+	}
+	
+	public void logOutOlx () {
+		OLX.getInstance().logOutUser(this);
+	}
 
 	public void addNotice(Notice n) {
-
 		Admin.pendingAds.add(n);
 	}
 
