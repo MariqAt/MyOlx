@@ -4,14 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Message implements Comparable<Message> {
-	private User sender;
-	private User receiver;
+	private OLX.User sender;
+	private OLX.User receiver;
 	private LocalDateTime time;
 	private String content;
 	private int iD;
 	private static int uniqueID = 1;
 
-	private Message(User sender, User receiver, String content) {
+	private Message(OLX.User sender, OLX.User receiver, String content) {
 		super();
 		this.sender = sender;
 		this.receiver = receiver;
@@ -21,7 +21,7 @@ public class Message implements Comparable<Message> {
 		uniqueID++;
 	}
 
-	static Message createMessage(User sender, User receiver, String content) {
+	static Message createMessage(OLX.User sender, OLX.User receiver, String content) {
 		Message message = new Message(sender, receiver, content);
 
 		return message;
